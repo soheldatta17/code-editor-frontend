@@ -209,7 +209,7 @@ function App() {
                                                         placeholder='Enter the Inputs (if any)'
                                                     />
                                                 </div>
-                                                <button onClick={() => clearOutput()} className="floating-btn">
+                                                <button onClick={() => compile()} className="floating-btn">
                                                     <FaPlay/>
                                                 </button>
                                             </div>
