@@ -1,0 +1,84 @@
+/* Filename: Navbar.css */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space out items */
+    padding: 0 20px; /* Adjust padding for horizontal alignment */
+    height: 50px;
+    color: #e0e0e0; /* Light text color for contrast */
+    background-color: #2d2d2d; /* Darker background for a modern look */
+    gap: 20px;
+    border-bottom: 1px solid #444; /* Subtle border for separation */
+}
+
+.navbar .code-compiler-heading {
+    margin: 0; /* Remove default margin */
+    font-size: 1.5rem; /* Adjust font size */
+    font-weight: bold; /* Bold text */
+}
+
+.navbar-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between controls */
+}
+
+.navbar-controls .font-size-label {
+    color: #e0e0e0; /* Light text color */
+    margin-right: 5px; /* Space between label and slider */
+}
+
+.navbar-controls select,
+.navbar-controls input[type="range"] {
+    color: #e0e0e0; /* Light text color */
+    background-color: #333; /* Dark background */
+    border: 1px solid #4caf50; /* Matching border color */
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 14px; /* Consistent font size */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.navbar-controls select:focus,
+.navbar-controls input[type="range"]:focus {
+    outline: none;
+    border-color: #66bb6a; /* Lighter border color on focus */
+    background-color: #444; /* Slightly lighter background on focus */
+}
+
+.navbar-controls input[type="range"] {
+    width: 120px; /* Adjust width of the slider */
+    -webkit-appearance: none; /* Remove default styling */
+    height: 4px; /* Slider height */
+    background: #4caf50; /* Slider background */
+    border-radius: 5px; /* Rounded corners for slider */
+}
+
+.navbar-controls input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Remove default styling */
+    width: 15px; /* Thumb width */
+    height: 15px; /* Thumb height */
+    background: #fff; /* Thumb color */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 50%; /* Rounded thumb */
+}
+
+.navbar-controls input[type="range"]::-moz-range-thumb {
+    width: 15px; /* Thumb width */
+    height: 15px; /* Thumb height */
+    background: #fff; /* Thumb color */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 50%; /* Rounded thumb */
+}
+h1.code-compiler-heading {
+    color: #e0e0e0; /* Light text color for readability */
+    padding: 1rem; /* Uniform padding */
+    margin: 0; /* Remove default margin */
+    font-size: 2.5rem; /* Larger font size for emphasis */
+    font-weight: bold; /* Bold text */
+    text-align: center; /* Center align the text */
+    text-transform: uppercase; /* Uppercase text for modern look */
+    letter-spacing: 1px; /* Slight spacing between letters */
+    margin-top: 0.6rem;
+  }

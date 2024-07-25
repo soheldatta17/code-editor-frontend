@@ -1,0 +1,151 @@
+/* Filename: App.css */
+
+.App {
+  max-height: 100vh;
+  width: 100%;
+  overflow-y: hidden;
+  background-color: #282c34; /* Dark background for a code editor feel */
+  font-family: 'Fira Code', monospace; /* Consistent font for code and UI */
+}
+
+.main {
+  display: flex;
+  height: calc(100vh - 50px);
+}
+
+.left-container {
+  margin-top: 0.6rem;
+  position: relative;
+  flex: 60%;
+  height: calc(100vh - 50px);
+  background-color: #1e1e1e; /* Slightly lighter background for editor area */
+  border-right: 1px solid #333; /* Divider between editor and output area */
+  border-radius: 8px; /* Rounded corners for modern look */
+  overflow: hidden; /* Ensure children don't overflow */
+}
+
+.right-container {
+  flex: 40%;
+  height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: column;
+  background-color: #1e1e1e; /* Matching background for consistency */
+  border-left: 1px solid #333; /* Divider to separate input/output */
+  padding: 20px; /* Increased padding for spacious look */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow for depth */
+}
+
+.input-box {
+  flex: 50%;
+  padding: 10px;
+}
+
+.input-box textarea {
+  font-size: 16px;
+  width: 100%;
+  height: 100%;
+  background-color: #2d2d2d; /* Darker input background */
+  color: #e0e0e0; /* Lighter text color */
+  border: 1px solid #333; /* Border to distinguish the input area */
+  border-radius: 6px; /* Rounded corners */
+  padding: 10px; /* Added padding for comfort */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2); /* Inner shadow for depth */
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth transitions */
+}
+
+.input-box textarea:focus {
+  background-color: #333; /* Slightly lighter background on focus */
+  border-color: #4caf50; /* Highlight border on focus */
+}
+
+.spinner-box {
+  flex: 50%;
+  background-color: #1e1e1e; /* Consistent background color */
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner-box img {
+  width: 80px; /* Slightly smaller spinner */
+  height: 80px;
+  animation: spin 1s linear infinite; /* Adding spinner animation */
+}
+
+/* Spinner animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.clear-btn, .run-btn {
+  width: 80px;
+  height: 40px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.clear-btn {
+  position: absolute;
+  bottom: 30px;
+  right: 18px;
+  background-color: #ff6f61; /* Vibrant color for visibility */
+  color: #ffffff;
+}
+
+.clear-btn:hover {
+  background-color: #e55e4e; /* Slightly darker shade on hover */
+  transform: scale(1.1); /* Slightly scale up for emphasis */
+}
+
+.run-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 18px;
+  background-color: #4caf50; /* Bright color for action button */
+  color: #ffffff;
+}
+
+.run-btn:hover {
+  background-color: #45a049; /* Slightly darker shade on hover */
+  transform: scale(1.1); /* Slightly scale up for emphasis */
+}
+
+.run-btn:active {
+  background-color: #388e3c; /* Even darker shade when pressed */
+}
+
+.output-box {
+  flex: 50%;
+  background: linear-gradient(145deg, #2a2a2a, #1e1e1e); /* Gradient background */
+  overflow-y: auto;
+  color: #e0e0e0;
+  position: relative;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.output-box pre {
+  font-size: 16px;
+  white-space: pre-wrap;
+  margin: 0;
+  line-height: 1.6;
+  overflow-x: auto;
+  background-color: #333;
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid #555;
+}
+
+h4 {
+  color: #f39c12; /* Bright color for headings */
+  margin-bottom: 10px;
+}
