@@ -71,6 +71,7 @@
     cursor: pointer; /* Pointer cursor on hover */
     border-radius: 50%; /* Rounded thumb */
 }
+
 h1.code-compiler-heading {
     color: #e0e0e0; /* Light text color for readability */
     padding: 1rem; /* Uniform padding */
@@ -81,4 +82,62 @@ h1.code-compiler-heading {
     text-transform: uppercase; /* Uppercase text for modern look */
     letter-spacing: 1px; /* Slight spacing between letters */
     margin-top: 0.6rem;
-  }
+}
+.selector
+{
+    display: flex;
+    color: black;
+    align-items: center;
+    gap: 10px; /* Space between controls */
+}
+
+/* Responsive Styles */
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the start */
+        height: auto; /* Adjust height */
+        padding: 10px; /* Adjust padding */
+        gap: 10px;
+    }
+
+    .navbar .code-compiler-heading {
+        font-size: 1.2rem; /* Adjust font size */
+    }
+
+    .navbar-controls {
+        flex-direction: column; /* Stack controls vertically */
+        align-items: flex-start; /* Align controls to the start */
+        gap: 5px;
+    }
+
+    .navbar-controls input[type="range"] {
+        width: 100%; /* Full width for the slider */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 5px; /* Reduce padding */
+        gap: 5px;
+    }
+    h1.code-compiler-heading {
+        font-size: 2rem;
+        margin: 0
+    }
+
+    .navbar-controls {
+        gap: 3px;
+    }
+
+    .navbar-controls select,
+    .navbar-controls input[type="range"] {
+        font-size: 12px; /* Adjust font size for controls */
+        padding: 3px 5px; /* Reduce padding for controls */
+    }
+
+    .navbar-controls .font-size-label {
+        margin-right: 3px; /* Reduce space between label and slider */
+    }
+}

@@ -16,16 +16,19 @@ const Navbar = ({ userLang, setUserLang, userTheme,
         { value: "vs-dark", label: "Dark" },
         { value: "light", label: "Light" },
     ]
+    
     return (
         <div className="navbar">
             <h1 className="code-compiler-heading">Code Compiler by Sohel</h1>
             <div className="navbar-controls">
-                <Select options={languages} value={userLang}
-                    onChange={(e) => setUserLang(e.value)}
-                    placeholder={userLang} />
-                <Select options={themes} value={userTheme}
-                    onChange={(e) => setUserTheme(e.value)}
-                    placeholder={userTheme} />
+                <div className="selector">
+                    <Select options={languages} value={userLang}
+                        onChange={(e) => setUserLang(e.value)}
+                        placeholder={userLang} />
+                    <Select options={themes} value={userTheme}
+                        onChange={(e) => setUserTheme(e.value)}
+                        placeholder={userTheme} />
+                </div>
                 <label className="font-size-label">Font Size</label>
                 <input type="range" min="18" max="30"
                     value={fontSize} step="2"

@@ -4,36 +4,73 @@
   max-height: 100vh;
   width: 100%;
   overflow-y: hidden;
-  background-color: #282c34; /* Dark background for a code editor feel */
-  font-family: 'Fira Code', monospace; /* Consistent font for code and UI */
+  background-color: #282c34;
+  /* Dark background for a code editor feel */
+  font-family: 'Fira Code', monospace;
+  /* Consistent font for code and UI */
 }
 
 .main {
   display: flex;
+  flex-direction: column;
   height: calc(100vh - 50px);
+}
+
+/* Larger screens */
+@media (min-width: 768px) {
+  .main {
+    flex-direction: row;
+  }
 }
 
 .left-container {
   margin-top: 0.6rem;
   position: relative;
-  flex: 60%;
-  height: calc(100vh - 50px);
-  background-color: #1e1e1e; /* Slightly lighter background for editor area */
-  border-right: 1px solid #333; /* Divider between editor and output area */
-  border-radius: 8px; /* Rounded corners for modern look */
-  overflow: hidden; /* Ensure children don't overflow */
+  flex: 100%;
+  height: auto;
+  background-color: #1e1e1e;
+  /* Slightly lighter background for editor area */
+  border-right: 1px solid #333;
+  /* Divider between editor and output area */
+  border-radius: 8px;
+  /* Rounded corners for modern look */
+  overflow: hidden;
+  /* Ensure children don't overflow */
+}
+
+/* Larger screens */
+@media (min-width: 768px) {
+  .left-container {
+    flex: 60%;
+    height: calc(100vh - 50px);
+  }
 }
 
 .right-container {
-  flex: 40%;
-  height: calc(100vh - 50px);
+  flex: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
-  background-color: #1e1e1e; /* Matching background for consistency */
-  border-left: 1px solid #333; /* Divider to separate input/output */
-  padding: 20px; /* Increased padding for spacious look */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow for depth */
+  background-color: #1e1e1e;
+  /* Matching background for consistency */
+  border-left: 1px solid #333;
+  /* Divider to separate input/output */
+  padding: 20px;
+  /* Increased padding for spacious look */
+  border-radius: 8px;
+  /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  /* Enhanced shadow for depth */
+  margin-top: 1rem;
+}
+
+/* Larger screens */
+@media (min-width: 768px) {
+  .right-container {
+    flex: 40%;
+    height: calc(100vh - 50px);
+    margin-top: 0;
+  }
 }
 
 .input-box {
@@ -45,23 +82,33 @@
   font-size: 16px;
   width: 100%;
   height: 100%;
-  background-color: #2d2d2d; /* Darker input background */
-  color: #e0e0e0; /* Lighter text color */
-  border: 1px solid #333; /* Border to distinguish the input area */
-  border-radius: 6px; /* Rounded corners */
-  padding: 10px; /* Added padding for comfort */
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2); /* Inner shadow for depth */
-  transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth transitions */
+  background-color: #2d2d2d;
+  /* Darker input background */
+  color: #e0e0e0;
+  /* Lighter text color */
+  border: 1px solid #333;
+  /* Border to distinguish the input area */
+  border-radius: 6px;
+  /* Rounded corners */
+  padding: 10px;
+  /* Added padding for comfort */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+  /* Inner shadow for depth */
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  /* Smooth transitions */
 }
 
 .input-box textarea:focus {
-  background-color: #333; /* Slightly lighter background on focus */
-  border-color: #4caf50; /* Highlight border on focus */
+  background-color: #333;
+  /* Slightly lighter background on focus */
+  border-color: #4caf50;
+  /* Highlight border on focus */
 }
 
 .spinner-box {
   flex: 50%;
-  background-color: #1e1e1e; /* Consistent background color */
+  background-color: #1e1e1e;
+  /* Consistent background color */
   overflow-y: auto;
   display: flex;
   justify-content: center;
@@ -69,23 +116,31 @@
 }
 
 .spinner-box img {
-  width: 80px; /* Slightly smaller spinner */
+  width: 80px;
+  /* Slightly smaller spinner */
   height: 80px;
-  animation: spin 1s linear infinite; /* Adding spinner animation */
+  animation: spin 1s linear infinite;
+  /* Adding spinner animation */
 }
 
 /* Spinner animation */
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-.clear-btn, .run-btn {
-  width: 80px;
-  height: 40px;
-  font-size: 16px;
+.clear-btn,
+.run-btn {
+  width: 60px;
+  height: 60px;
+  font-size: 20px;
   font-weight: bold;
-  border-radius: 4px;
+  border-radius: 50%;
   transition: background-color 0.3s ease, transform 0.3s ease;
   cursor: pointer;
   border: none;
@@ -95,35 +150,43 @@
   position: absolute;
   bottom: 30px;
   right: 18px;
-  background-color: #ff6f61; /* Vibrant color for visibility */
+  background-color: #ff6f61;
+  /* Vibrant color for visibility */
   color: #ffffff;
 }
 
 .clear-btn:hover {
-  background-color: #e55e4e; /* Slightly darker shade on hover */
-  transform: scale(1.1); /* Slightly scale up for emphasis */
+  background-color: #e55e4e;
+  /* Slightly darker shade on hover */
+  transform: scale(1.1);
+  /* Slightly scale up for emphasis */
 }
 
 .run-btn {
   position: absolute;
   bottom: 20px;
   right: 18px;
-  background-color: #4caf50; /* Bright color for action button */
+  background-color: #4caf50;
+  /* Bright color for action button */
   color: #ffffff;
 }
 
 .run-btn:hover {
-  background-color: #45a049; /* Slightly darker shade on hover */
-  transform: scale(1.1); /* Slightly scale up for emphasis */
+  background-color: #45a049;
+  /* Slightly darker shade on hover */
+  transform: scale(1.1);
+  /* Slightly scale up for emphasis */
 }
 
 .run-btn:active {
-  background-color: #388e3c; /* Even darker shade when pressed */
+  background-color: #388e3c;
+  /* Even darker shade when pressed */
 }
 
 .output-box {
   flex: 50%;
-  background: linear-gradient(145deg, #2a2a2a, #1e1e1e); /* Gradient background */
+  background: linear-gradient(145deg, #2a2a2a, #1e1e1e);
+  /* Gradient background */
   overflow-y: auto;
   color: #e0e0e0;
   position: relative;
@@ -146,6 +209,77 @@
 }
 
 h4 {
-  color: #f39c12; /* Bright color for headings */
+  color: #f39c12;
+  /* Bright color for headings */
   margin-bottom: 10px;
+}
+
+.floating-btn {
+  position: fixed;
+  /* Fixes the button in place relative to the viewport */
+  bottom: 20px;
+  /* Distance from the bottom of the viewport */
+  right: 20px;
+  /* Distance from the right side of the viewport */
+  background-color: #4caf50;
+  /* Bright color for action button */
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  /* Makes the button circular */
+  width: 50px;
+  /* Width of the button */
+  height: 50px;
+  /* Height of the button */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  /* Size of the icon/text inside the button */
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Shadow for better visibility */
+  transition: background-color 0.3s, box-shadow 0.3s;
+  /* Smooth transition for hover effects */
+}
+
+.floating-btn:hover {
+  background-color: #388e3c;
+  /* Darker color on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  /* Enhanced shadow on hover */
+}
+
+.choose {
+  display: flex;
+  /* Align children in a row */
+  justify-content: space-evenly;
+  /* Center buttons horizontally */
+  gap: 10px;
+  /* Space between buttons */
+  margin-top: 4px;
+}
+
+.selector-btn {
+  /* Green background */
+  background: transparent;
+  border: 2px solid white;
+  color: #ffffff;
+  border-radius: 5px;
+  /* Rounded corners */
+  padding: 10px 20px;
+  /* Padding for button size */
+  font-size: 16px;
+  /* Text size */
+  cursor: pointer;
+  /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.3s;
+  /* Smooth transition for hover effects */
+}
+
+.selector-btn:hover {
+  background-color: #4caf50;
+  /* Darker green on hover */
+  transform: scale(1.05);
+  /* Slightly larger button on hover */
 }
