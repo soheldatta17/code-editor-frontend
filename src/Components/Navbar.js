@@ -19,7 +19,7 @@ const Navbar = ({ userLang, setUserLang, userTheme,
     
     return (
         <div className="navbar">
-            <h1 className="code-compiler-heading">Code Compiler by Sohel</h1>
+            <h1 className="code-compiler-heading">Code Editor by Sohel</h1>
             <div className="navbar-controls">
                 <div className="selector">
                     <Select options={languages} value={userLang}
