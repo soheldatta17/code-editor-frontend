@@ -7,10 +7,10 @@ import '../Styles/Navbar.css';
 const Navbar = ({ userLang, setUserLang, userTheme,
     setUserTheme, fontSize, setFontSize }) => {
     const languages = [
-        { value: "c", label: "C" },
-        { value: "cpp", label: "C++" },
+       // { value: "c", label: "C" },
+        // { value: "cpp", label: "C++" },
         { value: "python3", label: "Python" },
-        { value: "java", label: "Java" },
+        // { value: "java", label: "Java" },
     ];
     const themes = [
         { value: "vs-dark", label: "Dark" },
